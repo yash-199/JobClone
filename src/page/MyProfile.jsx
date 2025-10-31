@@ -1,173 +1,167 @@
 import React from 'react'
-import BannerBg from "../assets/BannerBg.jpg";
-import { LuUpload } from "react-icons/lu";
+import image from "../assets/BannerBg.jpg"
+import { MdEdit } from "react-icons/md";
+import { CiLocationOn } from "react-icons/ci";
+import { CiPhone } from "react-icons/ci";
+import { RiHandbagLine } from "react-icons/ri";
+import { MdOutlineMailOutline } from "react-icons/md";
+import { FaMoneyBill } from "react-icons/fa";
+import { SlCalender } from "react-icons/sl";
+import { MdOutlineFileDownload } from "react-icons/md";
+import { RiDeleteBinLine } from "react-icons/ri";
 const MyProfile = () => {
     return (
-        <div className='w-full min-h-screen'>
+        <section className='relative top-20'>
+            <div className="container  mx-auto w-10/12 shadow-lg rounded-2xl bg-white">
+                <div className="flex flex-wrap items-center p-8 md:p-10 gap-8 md:gap-12">
+                    {/* Profile Image */}
+                    <div className="flex-shrink-0">
+                        <img
+                            src={image}
+                            alt="Profile"
+                            className="w-32 h-32 md:w-48 md:h-48 object-cover rounded-full shadow-md"
+                        />
+                    </div>
 
-            {/* Hero Section */}
-            <div className='relative w-full h-[50vh] bg-center bg-cover flex items-center justify-center'
-                style={{ backgroundImage: `url(${BannerBg})` }}
-            >
-                {/* Overlay */}
-                <div className='absolute inset-0 bg-black/90 backdrop-blur-sm'></div>
-                {/* Title */}
-                <div className='relative z-10 text-center text-white'>
-                    <h1 className='text-3xl md:text-4xl font-semibold'>
-                        My Profile
+                    {/* Profile Info */}
+                    <div className="flex-1">
+                        <h1 className="flex items-center text-2xl md:text-3xl font-semibold gap-3 text-gray-800">
+                            Yash Kumar Jha
+                            <MdEdit className="text-blue-500 cursor-pointer hover:text-blue-600 transition-colors" />
+                        </h1>
+
+                        <div className="mt-3 flex flex-col md:flex-row md:items-center md:justify-between text-gray-600">
+                            <p className="text-sm md:text-base">
+                                at <span className="font-medium text-gray-800">Asian Institute of Medical Sciences</span>
+                            </p>
+                            <p className="text-sm md:text-base italic mt-2 md:mt-0">
+                                Profile last updated — <span className="text-green-600">Yesterday</span>
+                            </p>
+                        </div>
+                        <hr className='my-4' />
+                        <div className='grid grid-cols-2'>
+                            <div className='flex items-center gap-4'>
+                                <CiLocationOn />
+                                <p>New Delhi, India</p>
+                            </div>
+                            <div className='flex items-center gap-4'>
+                                <CiPhone />
+                                <p>9873472655</p>
+                            </div>
+                        </div>
+                        <div className='grid grid-cols-2'>
+                            <div className='flex items-center gap-4'>
+                                <RiHandbagLine />
+                                <p>3 Years</p>
+                            </div>
+                            <div className='flex items-center gap-4'>
+                                <MdOutlineMailOutline />
+                                <p>byash0720@gmail.com</p>
+                            </div>
+                        </div>
+                        <div className='grid grid-cols-2'>
+                            <div className='flex items-center gap-4'>
+                                <FaMoneyBill />
+                                <p>4,20,000</p>
+                            </div>
+                            <div className='flex items-center gap-4'>
+                                <SlCalender />
+                                <p>1 month notice period</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            {/* Summary */}
+            <div className='container shadow-lg mx-auto w-10/12  bg-white my-6 p-6'>
+                <div className='flex justify-between items-center'>
+                    <h1 className="flex items-center text-2xl md:text-xl font-semibold gap-3 text-gray-800">
+                        Summary
                     </h1>
+                    <p className="text-blue-500 cursor-pointer hover:text-blue-600 transition-colors">Add Employment</p>
+                </div>
+                {/* Details */}
+                <div className='my-2'>
+                    <p className="flex items-center text-lg md:text-lg font-semibold gap-3 text-gray-800">Web Developer
+                        <MdEdit className="text-blue-500 cursor-pointer hover:text-blue-600 transition-colors" />
+                    </p>
+                    <p>Asian Institute of Medical Sciences</p>
+                    <p>Full-time
+                        Aug 2024 to Present (1 year 3 months)</p>
+                    <p>Notice Period</p>
                 </div>
             </div>
 
-            {/* Profile Info */}
-            <div className='relative z-10 mx-auto w-10/12 md:w-8/12 bg-white shadow-lg rounded-2xl p-6 md:p-10 -mt-20'>
-                {/* Uplaod Image */}
-                <div className="w-full flex items-center gap-10">
-                    {/* Upload Box */}
+            {/* Resume Upload */}
+            <div className='container shadow-lg mx-auto w-10/12  bg-white my-6 p-6'>
+                <h1 className='text-2xl'>Resume</h1>
+                <div className='flex justify-between items-center my-2'>
                     <div>
-                        <label
-                            htmlFor="logo-upload"
-                            className="w-[180px] h-[120px] border-2 border-dashed border-gray-300 rounded-md flex flex-col items-center justify-center cursor-pointer hover:border-[#309689] transition"
-                        >
-                            <img
-                                src={BannerBg}
-                                alt="Uploaded Logo"
-                                className="w-full h-full object-contain rounded-md"
-                            />
-                            <>
-                                <LuUpload className="text-gray-400 text-2xl mb-1" />
-                                <span className="text-gray-600 text-sm font-medium">
-                                    Browse Logo
-                                </span>
-                            </>
-                            <input
-                                id="logo-upload"
-                                type="file"
-                                accept=".jpg,.png"
-                                className="hidden"
-                            />
-                        </label>
+                        <p>Yash Kumar Jha</p>
+                        <p className='text-sm text-slate-700'>uploaded On Date</p>
                     </div>
-                    <div>
-                        {/* File Guidelines */}
-                        <p className="text-lg text-gray-500 mt-2 ">
-                            Max file size: <b>1MB</b> | Min dimension: <b>330×300</b> | Allowed:{" "}
-                            <b>.jpg, .png</b>
-                        </p>
-                    </div>
-
-                </div>
-
-                <div className='w-full border border-dashed bg-slate-400 h-0.5 my-10'>
-
-                </div>
-                {/* User Information */}
-
-                <div className="my-4">
-                    <div className="flex flex-wrap justify-between items-center gap-4 mb-8">
-                        {/* First Name */}
-                        <div className="flex-1 min-w-[250px]">
-                            <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-1">
-                                Full Name
-                            </label>
-                            <input
-                                type="text"
-                                id="firstName"
-                                placeholder="Enter Full name"
-                                className="w-full bg-slate-100 border border-gray-300 rounded-md px-3 py-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#309689]"
-                            />
-                        </div>
-
-                        {/* Last Name */}
-                        <div className="flex-1 min-w-[250px]">
-                            <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-1">
-                                Job Title
-                            </label>
-                            <input
-                                type="text"
-                                id="lastName"
-                                placeholder="Enter last name"
-                                className="w-full bg-slate-100 border border-gray-300 rounded-md px-3 py-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#309689]"
-                            />
-                        </div>
-                    </div>
-                    {/* Phone & Email */}
-                    <div className='flex flex-wrap justify-between items-center gap-4 mb-8'>
-                        {/* Phone */}
-                        <div className='flex-1 min-w-[250px]'>
-                            <label htmlFor="phoneno" className='block text-sm font-medium text-gray-700 mb-1'>
-                                Phone No
-                            </label>
-                            <input type="number" placeholder='Enter Phone No.'
-                                className='w-full bg-slate-100 border border-gray-300 rounded-md px-3 py-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#309689]'
-                                name="" id="" />
-                        </div>
-                        {/* Email */}
-                        <div className='flex-1 min-w-[250px]'>
-                            <label htmlFor="email" className='block text-sm font-medium text-gray-700 mb-1'>
-                                Email
-                            </label>
-                            <input type="email" placeholder='Enter Email'
-                                className='w-full bg-slate-100 border border-gray-300 rounded-md px-3 py-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#309689]'
-                                name="" id="" />
-                        </div>
-                    </div>
-
-                    {/* Website and Salary */}
-                    <div className='flex flex-wrap justify-between items-center gap-4 mb-8'>
-                        {/* WEBSITE */}
-                        <div className='flex-1 min-w-[250px]'>
-                            <label htmlFor="website" className='block text-sm font-medium text-gray-700 mb-1'>
-                                Website
-                            </label>
-                            <input type="text" placeholder='Enter your portfolio'
-                                className='w-full bg-slate-100 border border-gray-300 rounded-md px-3 py-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#309689]'
-                                name="" id="" />
-                        </div>
-                        {/* SALARY */}
-                        <div className='flex-1 min-w-[250px]'>
-                            <label htmlFor="email" className='block text-sm font-medium text-gray-700 mb-1'>
-                                Current CTC
-                            </label>
-                            <input type="email" placeholder='Enter CTC'
-                                className='w-full bg-slate-100 border border-gray-300 rounded-md px-3 py-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#309689]'
-                                name="" id="" />
-                        </div>
-                        <div className='flex-1 min-w-[250px]'>
-                            <label htmlFor="email" className='block text-sm font-medium text-gray-700 mb-1'>
-                                Expected ETC
-                            </label>
-                            <input type="email" placeholder='Enter ETC'
-                                className='w-full bg-slate-100 border border-gray-300 rounded-md px-3 py-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#309689]'
-                                name="" id="" />
-                        </div>
-                    </div>
-
-                    {/* Experience & DOB */}
-                    <div className='flex flex-wrap justify-between items-center gap-4 mb-8'>
-                        {/* WEBSITE */}
-                        <div className='flex-1 min-w-[250px]'>
-                            <label htmlFor="website" className='block text-sm font-medium text-gray-700 mb-1'>
-                                Experience
-                            </label>
-                            <input type="number" placeholder='Enter Experience'
-                                className='w-full bg-slate-100 border border-gray-300 rounded-md px-3 py-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#309689]'
-                                name="" id="" />
-                        </div>
-                        {/* SALARY */}
-                        <div className='flex-1 min-w-[250px]'>
-                            <label htmlFor="DOB" className='block text-sm font-medium text-gray-700 mb-1'>
-                                DOB
-                            </label>
-                            <input type="date" placeholder='Enter CTC'
-                                className='w-full bg-slate-100 border border-gray-300 rounded-md px-3 py-4 text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#309689]'
-                                name="" id="" />
-                        </div>
+                    <div className='flex items-center justify-between gap-4'>
+                        <MdOutlineFileDownload className='text-2xl' />
+                        <RiDeleteBinLine className='text-2xl' />
                     </div>
                 </div>
-
+                <div className='border border-dashed  text-center py-10'>
+                    <input type="file" name="" id="" />
+                    <p>Supported Formats: doc, docx, rtf, pdf, upto 2 MB</p>
+                </div>
             </div>
-        </div >
+
+            {/* Key Skill */}
+            <div className='container shadow-lg mx-auto w-10/12  bg-white my-6 p-6'>
+                <h1 className="flex items-center text-2xl md:text-xl font-semibold gap-3 text-gray-800">
+                    Key Skill
+                    <MdEdit className="text-blue-500 cursor-pointer hover:text-blue-600 transition-colors" />
+                </h1>
+            </div>
+
+            {/* Employment */}
+            <div className='container shadow-lg mx-auto w-10/12  bg-white my-6 p-6'>
+                <div className='flex justify-between items-center'>
+                    <h1 className="flex items-center text-2xl md:text-xl font-semibold gap-3 text-gray-800">
+                        Employment
+                    </h1>
+                    <p className="text-blue-500 cursor-pointer hover:text-blue-600 transition-colors">Add Employment</p>
+                </div>
+                {/* Details */}
+                <div className='my-2'>
+                    <p className="flex items-center text-lg md:text-lg font-semibold gap-3 text-gray-800">Web Developer
+                        <MdEdit className="text-blue-500 cursor-pointer hover:text-blue-600 transition-colors" />
+                    </p>
+                    <p>Asian Institute of Medical Sciences</p>
+                    <p>Full-time
+                        Aug 2024 to Present (1 year 3 months)</p>
+                    <p>Notice Period</p>
+                </div>
+            </div>
+
+            {/* Education */}
+            <div className='container shadow-lg mx-auto w-10/12  bg-white my-6 p-6'>
+                <div className='flex justify-between items-center'>
+                    <h1 className="flex items-center text-2xl md:text-xl font-semibold gap-3 text-gray-800">
+                        Education
+                    </h1>
+                    <p className="text-blue-500 cursor-pointer hover:text-blue-600 transition-colors">Add Employment</p>
+                </div>
+                {/* Details */}
+                <div className='my-2'>
+                    <p className="flex items-center text-lg md:text-lg font-semibold gap-3 text-gray-800">MCA
+                        <MdEdit className="text-blue-500 cursor-pointer hover:text-blue-600 transition-colors" />
+                    </p>
+                    <p>Amity University</p>
+                    <p>Full-time
+                        Aug 2024 to Present (1 year 3 months)</p>
+                    <p>Notice Period</p>
+                </div>
+            </div>
+        </section>
+
     )
 }
 
